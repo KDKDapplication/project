@@ -1,0 +1,65 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:kdkd_mobile/common/history_list/history_list_widget.dart';
+import 'package:kdkd_mobile/feature/parent_common/providers/payments_provider.dart';
+
+class ChildCollectionHistoryPage extends ConsumerStatefulWidget {
+  final String? childUuid;
+
+  const ChildCollectionHistoryPage({super.key, this.childUuid});
+
+  @override
+  ConsumerState<ChildCollectionHistoryPage> createState() => _ChildCollectionHistoryPageState();
+}
+
+class _ChildCollectionHistoryPageState extends ConsumerState<ChildCollectionHistoryPage> {
+  @override
+  void initState() {
+    super.initState();
+    // 초기 데이터 로드
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(paymentsProvider.notifier).loadPayments(
+            childUuid: widget.childUuid ?? 'test-child-uuid',
+            refresh: true,
+          );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final paymentsState = ref.watch(paymentsProvider);
+
+    if (paymentsState.isLoading && paymentsState.data.isEmpty) {
+      return const Scaffold(
+        body: Center(child: CircularProgressIndicator()),
+      );
+    }
+
+    if (paymentsState.error != null) {
+      return Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('오류: ${paymentsState.error}'),
+              ElevatedButton(
+                onPressed: () {
+                  ref.read(paymentsProvider.notifier).loadPayments(
+                        childUuid: widget.childUuid ?? 'test-child-uuid',
+                        refresh: true,
+                      );
+                },
+                child: const Text('다시 시도'),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
+    return HistoryListWidget(
+      appbarTitle: "소비 내역",
+      data: paymentsState.data,
+    );
+  }
+}

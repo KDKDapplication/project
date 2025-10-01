@@ -1,0 +1,10 @@
+**
+!build/libs/*.jar
+!.env
+!src/
+!gradlew
+!gradle/
+!settings.gradle*
+!build.gradle*
+!Dockerfile
+!docker-compose.yml

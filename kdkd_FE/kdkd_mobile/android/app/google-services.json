@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "678298547490",
+    "project_id": "kdkd-471601",
+    "storage_bucket": "kdkd-471601.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678298547490:android:c6c70b2751799fe6dae17b",
+        "android_client_info": {
+          "package_name": "com.sunshinemoongit.kdkd_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "678298547490-05m9olv676jb5jfjkltnrnfjllc1la64.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCa1oLzyB1Jjw7eTP9vtNODxXKddXdMLss"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "678298547490-05m9olv676jb5jfjkltnrnfjllc1la64.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "678298547490-q6i8lvcamoavpqdm4tjth7tinor1bumn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sunshinemoongit.kdkdMobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

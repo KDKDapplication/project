@@ -1,0 +1,25 @@
+final mockPatternData2 = {
+  "summary": "여가 중심형",
+  "lastData": {
+    "totalDays": 18,
+    "totalAmount": 185000,
+    "etcAmount": 7000,
+    "transportationAmount": 8200,
+    "stationaryStoreAmount": 23000,
+    "convenienceStoreAmount": 41000,
+    "restaurantAmount": 58000,
+    "cultureAmount": 26000,
+    "cafeAmount": 22000,
+  },
+  "thisData": {
+    "totalDays": 20,
+    "totalAmount": 214200,
+    "etcAmount": 9000,
+    "transportationAmount": 9500,
+    "stationaryStoreAmount": 18000,
+    "convenienceStoreAmount": 43000,
+    "restaurantAmount": 64000,
+    "cultureAmount": 38000,
+    "cafeAmount": 23000,
+  },
+};
